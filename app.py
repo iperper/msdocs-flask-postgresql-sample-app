@@ -32,6 +32,8 @@ migrate = Migrate(app, db)
 # Create databases, if databases exists doesn't issue create
 # For schema changes, run "flask db migrate"
 from models import Restaurant, Review
+
+# Had to add context
 with app.app_context():
     db.create_all()
     db.session.commit()
